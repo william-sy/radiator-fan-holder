@@ -15,7 +15,7 @@ use <MCAD/boxes.scad>
 fan = "m";
 // specify true / false for mount holes at the end
 mount_holes_at_end = false;
-// The thickness of your fan 
+// The thickness of your fan
 fan_thickness = 25;
 
 rad_lip      = 4;
@@ -35,7 +35,7 @@ fan_hole_spacing =
 (fan == "m") ? 71.5:
 (fan == "l") ? 104.5:0;
 // The inner (removed) cube radius
-inner_radius = 
+inner_radius =
 (fan == "s") ? 15:
 (fan == "m") ? 17:
 (fan == "l") ? 30:0;
@@ -45,7 +45,7 @@ holder_on_bed =
 (fan == "m") ? 1:
 (fan == "l") ? 0:0;
 // The distance between the front bracket and the fan bracket
-fr_brack_dist = 
+fr_brack_dist =
 (fan == "s") ? 20:
 (fan == "m") ? 0:
 (fan == "l") ? -20:0;
@@ -70,7 +70,6 @@ module fan_holder(){
         translate([-fan_hole_spacing/2,fan_hole_spacing/2,0])
             cylinder(h=br_height+2 ,r= hole_radius, center = true);
     }
-
     // mount bracket 1
     difference(){
         translate([fan_size/2-mount_with,fan_size/2+mount_length/2-0.001,0])
@@ -84,13 +83,11 @@ module fan_holder(){
             cube([mount_with,mount_length, br_height], center = true);
         translate([-fan_size/2+mount_with,fan_size/2+mount_length/2-0.001,0])
             cube([mount_with/2,mount_length/2, br_height+1], center = true);
-    } 
-
+    }
     // glue brace 1
     translate([fan_size/2-mount_with,-fan_size/2-1,0])
         cube([mount_with,mount_length/2, br_height], center = true);
-    
-    // gleu brace 2
+    // glue brace 2
     translate([-(fan_size/2-mount_with),-fan_size/2-1,0])
         cube([mount_with,mount_length/2, br_height], center = true);
 }
@@ -123,14 +120,12 @@ module front_plate (){
             cube([fan_size+mount_length-br_height,fan_thickness/1.2,br_height+1]);
         }
         // Add braces to lean agains the fan
-        // not sure it its really needed with this design, ill leave it for now 
+        // not sure it its really needed with this design, ill leave it for now
         // brace 1
         // brace 2
 }
 
-
 module connector () {
-    
     difference(){
         translate([0,-mount_length+0.001,0])
         if (fan == "l"){
@@ -138,23 +133,20 @@ module connector () {
         }else{
             cube([mount_with*2,mount_length, br_height], center = true);
         }
-    
         translate([hole_radius+((fan_size-fan_hole_spacing)/2),-mount_length,0])
             cylinder(h=br_height+2 ,r=hole_radius, center = true);
         translate([-hole_radius-((fan_size-fan_hole_spacing)/2),-mount_length,0])
-            cylinder(h=br_height+2 ,r=hole_radius, center = true);         
+            cylinder(h=br_height+2 ,r=hole_radius, center = true);
     }
-    
     difference(){
         //translate([-fan_size/2+mount_with,fan_size/2+mount_length/2-0.001,0])
             cube([mount_with,mount_length, br_height], center = true);
         //translate([-fan_size/2+mount_with,fan_size/2+mount_length/2-0.001,0])
             cube([mount_with/2,mount_length/2, br_height+1], center = true);
     }
- 
 }
 
-// Produse the actual fan holders
+// Produce the actual fan holders
 for (i=[0:1:holder_on_bed]) {
     // Fan holder + mounitng holes
     translate([i*(fan_size+mount_length)-0.001,0,0])
@@ -164,23 +156,15 @@ for (i=[0:1:holder_on_bed]) {
         translate([i*(fan_size+mount_length)-0.001,0,0])
             fan_brace();
     }
-    // Add mountin holes at the end
+    // Add mounting holes at the end
     if (mount_holes_at_end == true){
         translate([i*(fan_size+mount_length)-0.001,0,0])
             fan_brace();
     }
-    
     // Front face plate
-    //translate([x,y,z])
     translate ([i*(fan_size+mount_length-0.001)-fan_size/2,-fr_brack_dist,0])
         front_plate();
-
    // Add a botom connector
     translate ([i*(fan_size+mount_length),0,0])
-        connector();    
+        connector();
 }
-
-
-
-
-
