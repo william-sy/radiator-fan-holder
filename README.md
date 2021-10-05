@@ -28,6 +28,17 @@ The 80 mm fan fits nicely under a type 22, the 40 under a type 20 / 21 and the 1
 ## Nice to have
 - A bracket for the power supply, not perse needed, but would be nice.
 
+# Screws
+For mounting your fans to this bracket you can use the following screws:
+
+based on this ([fan](https://www.arctic.de/en/F8/AFACO-08000-GBA01/))
+
+|Front| back|
+|--|--|
+|[M3*16](https://www.microschroeven.nl/nl/inbus-met-bolkop-din7380/m3/inbus-met-bolkop-m3-x-16-roest-vrij-staal-din7380-per-10-stuks/a-2648-10000121)|[M3*35](https://www.microschroeven.nl/nl/inbus-met-bolkop-din7380/m3/inbus-met-bolkop-m3-x-35-roest-vrij-staal-din7380-per-10-stuks/a-3327-10000121)|
+
+The back screws are longer allowing you to mount the top and bottom bracket with 1 screw leaving you with roughly 4 mm for a nut.
+
 # Pictures of radiator fan holder V3
 
 Top over view (yes the fans do get dirty, and they are mounted upside down here) The holes in the center are for a piece of wire to route trough the radiator and thus make sure it keeps hanging.
