@@ -50,3 +50,15 @@ Here is a side view, you can see the front plate stickout, this is to hold onto 
 # Generate a other size
 By opening the code in openscad you can change the `fan` parameter to the desired size you want, press `F6` to render and you are all ready to export to STL
 ![Generate ](https://github.com/william-sy/radiator-fan-holder/blob/main/pictures/rad-3.png?raw=true)
+
+
+# More pictures:
+
+All 4 sides of the holder
+![Top view](https://github.com/william-sy/radiator-fan-holder/blob/main/pictures/rad-4.JPG?raw=true)
+
+4 fan holders under a radiator
+![Top view](https://github.com/william-sy/radiator-fan-holder/blob/main/pictures/rad-6.JPG?raw=true)
+
+The mounting system, is done with a solid core wire just fed trough the radiator.
+![Top view](https://github.com/william-sy/radiator-fan-holder/blob/main/pictures/rad-5.JPG?raw=true)
